@@ -1,12 +1,17 @@
 # 🎓 Smart Topic Allocator (AI-Powered)
 
+![React](https://img.shields.io/badge/React-Vite-blue)
+![AI](https://img.shields.io/badge/AI-Gemini-green)
+![Export](https://img.shields.io/badge/Export-PDF%2FExcel%2FPNG-orange)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
 > An advanced AI-powered academic platform that automatically generates, assigns, manages, and exports student assignment topics using Google Gemini AI and modern frontend engineering.
 
 ---
 
 ## 🚀 Live Demo
 
-🔗 **Frontend Demo:** https://random-allocator.netlify.app/  
+🔗 Frontend Demo: https://random-allocator.netlify.app/
 
 ---
 
@@ -15,29 +20,29 @@
 ### 🖥️ Upload File
 ![Upload Screenshot](./screenshot/upload.png)
 
-### 📱 Select-Options
-![select-options Screenshot](./screenshot/select-options.png)
+### ⚙️ Select Options
+![Select Options](./screenshot/select-options.png)
 
-### 🤖 Generating topics
-![Generating-Topics Screenshot](./screenshot/generating-topics.png)
+### 🤖 Generating Topics
+![Generating Topics](./screenshot/generating-topics.png)
 
-### 📤 Topics Generate
-![Topics-Generate Screenshot](./screenshot/topics-generate.png)
+### 📄 Generated Topics
+![Generated Topics](./screenshot/topics-generate.png)
 
-### 📤 Dashboard
-![Main Screenshot](./screenshot/1.png)
+### 🧑‍🏫 Dashboard
+![Dashboard](./screenshot/1.png)
 
-### 📤 Allocated Topics
-![Main Screenshot](./screenshot/2.png)
+### 📌 Allocated Topics
+![Allocated](./screenshot/2.png)
 
 ### 📤 Export Modal
-![Main Screenshot](./screenshot/3.png)
+![Export](./screenshot/3.png)
 
-### 📤 Exported File
-![Main Screenshot](./screenshot/4.png)
+### 📦 Export Output
+![Exported](./screenshot/4.png)
 
-### 📤 Dark Mode
-![Main Screenshot](./screenshot/dark.png)
+### 🌙 Dark Mode
+![Dark Mode](./screenshot/dark.png)
 
 ---
 
@@ -45,118 +50,93 @@
 
 ### 🤖 AI-Powered Topic Generation
 - Powered by **Google Gemini API**
-- Generates structured academic topics from documents
+- Generates structured academic assignment topics
 - Includes:
   - Title
   - Description
   - Difficulty level
   - Estimated hours
   - Tags
-- Multi-language support (English, Urdu, Arabic, etc.)
-- Custom academic levels (High School → Graduate)
+- Multi-language support (English, Urdu, Arabic, French, Spanish)
+- Supports academic levels (High School → Graduate)
 
 ---
 
 ### 🎓 Smart Assignment System
-- Automatically assigns topics to students
-- Fair distribution logic
-- Re-roll individual student assignment
-- Conflict detection (students > topics warning system)
+- Automatic topic distribution
+- Fair assignment logic
+- Manual re-roll per student
+- Conflict detection system
 
 ---
 
 ### 📂 Bulk Import System
-- Paste or upload multiple entries instantly
-- Supports:
-  - `.txt`
-  - `.csv`
-  - `.md`
-  - `.pdf`
-- Instant preview before importing
+- Paste or upload data instantly
+- Supports `.txt`, `.csv`, `.md`, `.pdf`
 - Drag & drop support
+- Live preview before import
 
 ---
 
 ### 🧠 AI Document Understanding
 - Upload syllabus, notes, or research papers
-- AI extracts meaningful topics automatically
-- Intelligent content summarization
+- AI extracts key concepts
+- Generates structured topics
+- Summarizes content automatically
 
 ---
 
-### 📤 Advanced Export System
-Export assignments in multiple formats:
+### 📤 Export System
 
 #### 📄 PDF Export
 - Styled academic reports
 - Tables with formatting
-- Header/Footer customization
+- Custom header/footer
 - Page numbering
 
 #### 📊 Excel Export
 - Multi-sheet workbook
 - Metadata sheet included
 - Freeze header support
-- Structured dataset export
 
 #### 🖼️ PNG Export
-- Canvas-based rendering
+- High-quality canvas rendering
 - Theme-based design
-- High-resolution output
-- Shareable visual reports
+- Shareable visuals
 
 ---
 
 ### 📊 Session Management
-- Save multiple assignment sessions
-- Load previous sessions anytime
-- Delete or manage history
-- Persistent local storage
+- Save multiple sessions
+- Load previous data anytime
+- Delete/manage history
+- Persistent storage support
 
 ---
 
-### 🎨 Modern UI/UX
+### 🎨 UI/UX System
 - Framer Motion animations
-- Drag & Drop (dnd-kit)
-- Dark/Light theme system
-- Glassmorphism UI design
-- Fully responsive layout
+- Drag & Drop support
+- Dark/Light mode
+- Glassmorphism design
+- Fully responsive UI
 
 ---
 
-## 🛠️ Tech Stack
 
-### Frontend
-- React.js (Vite)
-- Framer Motion
-- Axios
-- dnd-kit
-- React Hot Toast
+## 🧠 AI Workflow
 
-### AI Integration
-- Google Gemini API
-
-### Export Libraries
-- jsPDF
-- jspdf-autotable
-- xlsx (SheetJS)
-
-### Styling
-- Custom CSS (Modern UI system)
-
----
-
-## ⚙️ Installation
-
-```bash
-# Clone repository
-git clone https://github.com/rkhassan420/smart-topic-allocator.git
-
-# Navigate to project
-cd smart-topic-allocator
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
+```txt
+Upload / Paste Document
+        ↓
+Extract Raw Text
+        ↓
+Gemini AI Processing
+        ↓
+Generate Structured Topics
+        ↓
+Select Topics
+        ↓
+Assign to Students
+        ↓
+Export (PDF / Excel / PNG)
