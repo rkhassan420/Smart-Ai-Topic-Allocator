@@ -13,31 +13,31 @@
 ## 📸 Screenshots
 
 ### 🖥️ Upload File
-![Upload Screenshot](./screenshots/upload.png)
+![Upload Screenshot](./screenshot/upload.png)
 
 ### 📱 Select-Options
-![select-options Screenshot](./screenshots/select-options.png)
+![select-options Screenshot](./screenshot/select-options.png)
 
 ### 🤖 Generating topics
-![Generating-Topics Screenshot](./screenshots/generating-topics.png)
+![Generating-Topics Screenshot](./screenshot/generating-topics.png)
 
 ### 📤 Topics Generate
-![Topics-Generate Screenshot](./screenshots/topics-generate.png)
+![Topics-Generate Screenshot](./screenshot/topics-generate.png)
 
 ### 📤 Dashboard
-![Main Screenshot](./screenshots/1.png)
+![Main Screenshot](./screenshot/1.png)
 
 ### 📤 Allocated Topics
-![Main Screenshot](./screenshots/2.png)
+![Main Screenshot](./screenshot/2.png)
 
 ### 📤 Export Modal
-![Main Screenshot](./screenshots/3.png)
+![Main Screenshot](./screenshot/3.png)
 
 ### 📤 Exported File
-![Main Screenshot](./screenshots/4.png)
+![Main Screenshot](./screenshot/4.png)
 
 ### 📤 Dark Mode
-![Main Screenshot](./screenshots/dark.png)
+![Main Screenshot](./screenshot/dark.png)
 
 ---
 
@@ -150,7 +150,7 @@ Export assignments in multiple formats:
 
 ```bash
 # Clone repository
-git clone https://github.com/your-username/smart-topic-allocator.git
+git clone https://github.com/rkhassan420/smart-topic-allocator.git
 
 # Navigate to project
 cd smart-topic-allocator
