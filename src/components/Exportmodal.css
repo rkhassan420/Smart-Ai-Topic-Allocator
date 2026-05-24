@@ -1,0 +1,634 @@
+/* ══════════════════════════════════════════════════════
+   EXPORT MODAL — ExportModal.css
+   Uses CSS variables from App.css for light/dark support
+══════════════════════════════════════════════════════ */
+
+/* ── Backdrop & Modal Shell ────────────────────────── */
+.em-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.em-modal {
+  width: 100%;
+  max-width: 860px;
+  max-height: 92vh;
+  background: var(--bg-1);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-xl);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* ── Header ────────────────────────────────────────── */
+.em-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-2);
+  flex-shrink: 0;
+}
+
+.em-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.em-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, #4f46e5, #818cf8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.em-badge-icon {
+  font-size: 14px;
+  color: #fff;
+  font-weight: 800;
+}
+
+.em-header-title {
+  font-weight: 700;
+  font-size: 15px;
+  color: var(--text-1);
+}
+
+.em-header-sub {
+  font-size: 11px;
+  color: var(--text-3);
+  margin-top: 2px;
+}
+
+.em-close-btn {
+  background: var(--bg-3);
+  border: 1px solid var(--border-hi);
+  color: var(--text-3);
+  border-radius: var(--radius-sm);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.em-close-btn:hover {
+  background: var(--bg-4);
+  color: var(--text-1);
+}
+
+/* ── Body ──────────────────────────────────────────── */
+.em-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ── Format Grid ───────────────────────────────────── */
+.em-format-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.em-format-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 12px 8px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+  background: var(--bg-2);
+  transition: all 0.15s;
+  font-family: inherit;
+}
+
+/* PDF format colors */
+.em-format-card.fmt--pdf.em-format-card--active {
+  background: rgba(248, 113, 113, 0.08);
+  border-color: rgba(248, 113, 113, 0.35);
+  box-shadow: 0 0 20px rgba(248, 113, 113, 0.12);
+}
+.em-format-card.fmt--pdf.em-format-card--active .em-fmt-label { color: #f87171; }
+
+/* Excel format colors */
+.em-format-card.fmt--excel.em-format-card--active {
+  background: rgba(74, 222, 128, 0.08);
+  border-color: rgba(74, 222, 128, 0.35);
+  box-shadow: 0 0 20px rgba(74, 222, 128, 0.12);
+}
+.em-format-card.fmt--excel.em-format-card--active .em-fmt-label { color: #4ade80; }
+
+/* PNG format colors */
+.em-format-card.fmt--png.em-format-card--active {
+  background: rgba(167, 139, 250, 0.08);
+  border-color: rgba(167, 139, 250, 0.35);
+  box-shadow: 0 0 20px rgba(167, 139, 250, 0.12);
+}
+.em-format-card.fmt--png.em-format-card--active .em-fmt-label { color: #a78bfa; }
+
+.em-fmt-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+
+.em-fmt-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  transition: color 0.15s;
+}
+
+.em-fmt-desc {
+  font-size: 10px;
+  color: var(--text-4);
+  line-height: 1.3;
+  text-align: center;
+}
+
+/* ── Config Layout ─────────────────────────────────── */
+.em-config-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  flex: 1;
+}
+
+.em-config-col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Section ───────────────────────────────────────── */
+.em-section {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.em-section-title {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-3);
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Format-specific section title colors */
+.em-section-title--fmt.fmt--pdf   { color: #f87171; }
+.em-section-title--fmt.fmt--excel { color: #4ade80; }
+.em-section-title--fmt.fmt--png   { color: #a78bfa; }
+
+/* ── Field Row ─────────────────────────────────────── */
+.em-field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.em-field-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-3);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.em-input {
+  background: var(--bg-3);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  color: var(--text-1);
+  font-size: 12px;
+  width: 100%;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.15s;
+}
+
+.em-input:focus {
+  border-color: var(--violet);
+}
+
+.em-color-input {
+  width: 44px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid var(--border-hi);
+  background: transparent;
+  padding: 2px;
+}
+
+/* ── Toggle ────────────────────────────────────────── */
+.em-toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.em-toggle-track {
+  width: 36px;
+  height: 20px;
+  border-radius: 10px;
+  position: relative;
+  background: var(--bg-4);
+  border: 1px solid var(--border-hi);
+  transition: background 0.2s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.em-toggle-track--on {
+  background: var(--violet);
+  border-color: var(--violet);
+}
+
+.em-toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #fff;
+  transition: left 0.2s;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.em-toggle-thumb--on {
+  left: 18px;
+}
+
+.em-toggle-text {
+  font-size: 12px;
+  color: var(--text-2);
+}
+
+.em-toggles {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+/* ── Theme Grid ────────────────────────────────────── */
+.em-theme-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.em-theme-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.em-theme-chip:hover {
+  background: var(--bg-3);
+  border-color: var(--border-hi);
+}
+
+.em-theme-dots {
+  display: flex;
+  gap: 3px;
+}
+
+.em-theme-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.em-theme-dot--bg {
+  border: 1px solid var(--border-hi);
+}
+
+.em-theme-name {
+  font-size: 11px;
+  color: var(--text-3);
+  transition: color 0.15s;
+}
+
+.em-color-pickers {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+/* ── Format Options ────────────────────────────────── */
+.em-fmt-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.em-row-pair {
+  display: flex;
+  gap: 8px;
+}
+
+.em-row-pair .em-field-row {
+  flex: 1;
+}
+
+.em-range {
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.em-range.fmt--pdf-accent   { accent-color: #f87171; }
+.em-range.fmt--excel-accent { accent-color: #4ade80; }
+.em-range.fmt--png-accent   { accent-color: #a78bfa; }
+
+/* ── Preview ───────────────────────────────────────── */
+.em-preview {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  min-height: 140px;
+}
+
+.em-preview-header {
+  padding: 10px 14px 6px;
+  border-bottom: 3px solid transparent;
+}
+
+.em-preview-title {
+  font-weight: 700;
+  font-size: 13px;
+  color: #fff;
+}
+
+.em-preview-subtitle {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 2px;
+}
+
+.em-preview-date {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 2px;
+}
+
+.em-preview-rows {
+  padding: 6px 0;
+}
+
+.em-preview-row {
+  display: grid;
+  grid-template-columns: 24px 1fr 1.4fr;
+  padding: 4px 14px;
+  gap: 8px;
+  border-left: 2px solid transparent;
+}
+
+.em-preview-num {
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.em-preview-student {
+  font-size: 10px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.em-preview-topic {
+  font-size: 10px;
+  opacity: 0.7;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.em-preview-more {
+  padding: 4px 14px;
+  font-size: 9px;
+  color: var(--text-4);
+}
+
+.em-preview-footer {
+  padding: 5px 14px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.em-preview-footer-text,
+.em-preview-footer-count {
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ── Modal Footer ──────────────────────────────────── */
+.em-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 14px 20px;
+  border-top: 1px solid var(--border);
+  background: var(--bg-2);
+  flex-shrink: 0;
+}
+
+.em-cancel-btn {
+  background: var(--bg-3);
+  border: 1px solid var(--border-hi);
+  color: var(--text-2);
+  border-radius: var(--radius-sm);
+  padding: 8px 18px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.em-cancel-btn:hover {
+  background: var(--bg-4);
+  color: var(--text-1);
+}
+
+.em-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 10px 22px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+
+.em-export-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.em-export-btn.fmt--pdf {
+  background: linear-gradient(135deg, #dc2626cc, #f87171);
+  box-shadow: 0 4px 20px rgba(248, 113, 113, 0.3);
+}
+
+.em-export-btn.fmt--excel {
+  background: linear-gradient(135deg, #16a34acc, #4ade80);
+  box-shadow: 0 4px 20px rgba(74, 222, 128, 0.3);
+}
+
+.em-export-btn.fmt--png {
+  background: linear-gradient(135deg, #7c3aedcc, #a78bfa);
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.3);
+}
+
+.em-exporting-text {
+  opacity: 0.7;
+}
+
+.em-ext {
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+/* ── Export Trigger Button ─────────────────────────── */
+.em-main-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #4f46e5, #818cf8);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: inherit;
+  box-shadow: 0 4px 16px rgba(129, 140, 248, 0.3);
+  transition: all 0.15s;
+}
+
+.em-main-btn:hover {
+  box-shadow: 0 6px 22px rgba(129, 140, 248, 0.45);
+}
+
+/* ── Light Mode Overrides ──────────────────────────── */
+[data-theme="light"] .em-modal {
+  box-shadow: 0 12px 48px rgba(37, 99, 235, 0.1), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="light"] .em-format-card {
+  background: var(--bg-1);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .em-format-card:hover {
+  background: var(--bg-2);
+}
+
+[data-theme="light"] .em-section {
+  background: var(--bg-1);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .em-input {
+  background: var(--bg-2);
+  border-color: var(--border);
+  color: var(--text-1);
+}
+
+[data-theme="light"] .em-input:focus {
+  border-color: var(--violet);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.08);
+}
+
+[data-theme="light"] .em-toggle-track {
+  background: var(--bg-4);
+}
+
+[data-theme="light"] .em-theme-chip {
+  background: var(--bg-1);
+  border-color: var(--border);
+}
+
+[data-theme="light"] .em-theme-chip:hover {
+  background: var(--bg-2);
+}
+
+[data-theme="light"] .em-cancel-btn {
+  background: var(--bg-2);
+  border-color: var(--border);
+  color: var(--text-2);
+}
+
+[data-theme="light"] .em-cancel-btn:hover {
+  background: var(--bg-3);
+}
+
+/* ── Scrollbar in modal body ───────────────────────── */
+.em-body::-webkit-scrollbar { width: 5px; }
+.em-body::-webkit-scrollbar-track { background: transparent; }
+.em-body::-webkit-scrollbar-thumb { background: var(--bg-4); border-radius: 3px; }
+.em-body::-webkit-scrollbar-thumb:hover { background: var(--border-hi); }
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 640px) {
+  .em-config-area {
+    grid-template-columns: 1fr;
+  }
+
+  .em-format-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
